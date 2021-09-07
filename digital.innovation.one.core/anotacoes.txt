@@ -1,0 +1,26 @@
+1. Entender o que é o Jigsaw?
+
+
+Há muito tempo se diz sobre modularizar a plataforma Java. É um plano que começou desde antes do Java 7, foi uma possibilidade no Java 8 e por
+fim, para permitir mais tempo de desenvolvimento, revisão e testes, foi movido para o Java 9.
+
+O projeto Jigsaw, como foi chamado, é composto por uma série de JEPs. Algumas delas inclusive já disponíveis no Java 8, como os conhecidos
+Compact Profiles.
+A idéia por trás do projeto não é só criar um sistema de módulos, que poderemos usar em nossos projetos, mas também apliá-lo em toda a
+plataforma e JDK em busca de melhor organização e desempenho.
+Compact Profiles foi dividido em 3 compacts: 1. java.lang. java.io, 2. java.sql, 3. javax Na hora que fosse fazer a comppilação iria chamar
+somente os compact necessários para a execução, auxiliando na organização e desempenho da minha aplicação.
+
+JEPs -> versões
+
+Padrão Delegate
+Tenho um certo objeto que irá chamar uma função, mas ele não sabe como resolver aquele problema, ele chama outro recurso que irá resolver aquele
+problema.
+No exemplo foi criado a classe Calculadora que somente ela têm acesso as operaçãos, e mais nenhuma outra classe.
+Classes como Unisafe podem alterar a mémoria, sendo perigoso para a segurança do sistema.
+Para iniciar ir no projeto, clicar m New > Module...
+Criar o nome com padrão com ponto com mesmo nome de pacote do projeto + core.
+
+Por padrão, todo sistema modular já vêm com o módulo java.base, contendo a String e todo java.lang, java.io, java.util e demais pacotes muitas
+vezes essenciais para a esmagadora maioria dos projetos. São 94 módulos padrões. Para saber quais são digitar no terminal:
+java --list-modules
